@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zoological_park.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      
+    }
+
+    body {
+      font-family: "Raleway", sans-serif;
+            line-height: 1.6;
+      /* color: #333; */
+      color: #1d1d1f;
+      background-color: #f9fdf9;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ================ Navbar ================ */
+    
+    .navbar {
+  width: 100%;
+  padding: 20px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky; 
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #f9fdf9; /* Add a background color to prevent content bleed-through */
+}
+
+.logo-container { /* You should add this class to the HTML to group the logo and title */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Use gap for spacing */
+}
+
+.logo {
+  width: 50px;   
+  height: auto;
+}
+
+.navbar .logo-name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0; /* Reset default margin */
+}
+
+/* No change needed for .navbar ul li, just for context */
+.navbar ul li {
+  padding: 5px 10px;
+  font-size: 17px;
+  color: #333;
+  transition: text-decoration 0.3s;
+}
+
+.navbar li:hover {
+  text-decoration: underline;
+}
+
+/* New responsive media query for the navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stacks items vertically on small screens */
+    align-items: flex-start;
+  }
+  .navbar nav {
+    margin-top: 15px;
+  }
+}
+
+
+
+
+  
+
+
+    /* ================ Hero Banner ================ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .hero .overlay h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+    /* ================ Content Sections ================ */
+    .section {
+      padding: 60px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #005a2b;
+    }
+
+    .about-cnt{
+      font-size: 16px;
+      color: #555;
+      line-height:1.8;
+      font-weight: bold;
+      max-width:900px;
+      margin:0 auto;
+      padding: 0 20px;
+
+    }
+  
+    
+    .ticketbook{
+      overflow: hidden;
+      position: relative;
+      background: url("/Users/sanvidhanmane/Desktop/cprogramming/.vscode/webdev/images/snake3.avif")no-repeat center center/cover;
+      object-fit:fill;
+      object-position:top;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      min-height: 60vh;
+    }
+
+  
+
+   .ticketbook::after{
+
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+   
+
+    .ticket-text {
+      position: relative; /* keeps content above overlay */
+      top: 0%;
+      z-index: 1;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ticketbook h2{
+      font-family: Arial, Helvetica, sans-serif;
+     
+      position:relative;
+      top: 0%;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .ticketbook p{
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+
+
+    .btn{
+    background: linear-gradient(135deg, #2e7d32, #43a047); /* gradient green */
+    color: white;
+    font-size: 20px;           /* larger text */
+    padding: 14px 30px;        /* more padding */
+    border-radius: 20px;       /* rounded corners */
+    border: none;              /* remove border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle shadow */
+    transition: all 0.3s ease;
+    text-decoration: none;     /* remove underline */
+    display: inline-block;
+  }
+
+  
+
+ .btn:hover {
+  transform: scale(1.05);            /* slight pop effect */
+    background: linear-gradient(135deg, #43a047, #2e7d32); /* hover gradient */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+} 
+    
+
+    /* ================ Gallery Section ================ */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      border-radius: 8px;
+    }
+    /* .gallery {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content:space-around;
+} */
+
+
+    .gallery img {
+  width:250px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);    /* only hovered image zooms */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+   
+   
+
+    /* ================ Footer ================ */
+    .footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 40px;
+    }
+
+    .footer .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .footer h4 {
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer p, .footer a {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .footer a:hover {
+      color: white;
+    }
+
+    .footer .bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.8rem;
+    }
+
+    /* ================ Responsive tweaks ================ */
+    body{
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+      .hero .overlay h1 {
+        font-size: 2.2rem;
+      }
+      .section {
+        padding: 40px 20px;
+      }
+    }
+    @media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  .navbar {
+    flex-direction: row;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container"> <img src="https://i.postimg.cc/Nfh6MvQq/pmc-zoo-logo.png" class="logo">
+      <h1 class="logo-name">Rajiv Gandhi Zoological Park <br>& Wildlife Research Center </h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="/Users/sanvidhanmane/Desktop/cprogramming/.vscode/webdev/about.html" target="_blank">About</a></li>
+        <li><a href="/Users/sanvidhanmane/Desktop/cprogramming/.vscode/webdev/ticket.html">Buy a ticket</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <img src="https://i.postimg.cc/RFKc1gTb/tigereye2.jpg" >
+    <div class="overlay">
+      <h1>The Jungle In The City</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="section-title">About Us</div>
+   
+          <p class="about-cnt">At present, Rajiv Gandhi Zoological Park is home to around 60 species of wild fauna including mammals, birds and reptiles representing the Western Ghat and Deccan plateau. This wild fauna which represents the forest ecosystem, grassland ecosystem and aquatic ecosystem constitutes the animal collection plan which is grouped separately for public display by the ecosystem they represent.
+            Today this zoo is being recognised as one of the model zoos in the country and visited by around eighteen lacks visitors annually. The basic amenities like resting sheds, toilets, drinking water fountains, information signages, and wheelchairs for disabled persons are made available for the visitor’s ease. The battery-operated car facility is available to ferry visitors to the premises. To promote wildlife conservation education towards visitors and students at large different educational activities are also conducted on a regular basis where audiences are sensitized on various aspects of wildlife.
+            Pune Municipal Corporation is committed to making Rajiv Gandhi Zoological Park a world-class zoo thereby focusing on the speedy execution of the master plan of zoo, updating the animal facilities, infusing the newer technologies in animal health care and conservation breeding and concentrating the research pertaining to different aspects of wildlife.</p>
+      
+    </div>
+  </section>
+
+
+
+  <section class="ticketbook">
+    <div class="ticket-text">
+      <h2>Book Your Tickets Now</h2>
+<p>
+  Welcome to <strong>Rajiv Gandhi Zoological Park & Research Centre, Pune</strong>.<br>
+  Explore wildlife like never before with a smooth online ticket booking experience.<br>
+  <strong>Timings:</strong> 9:30 AM - 5:00 PM (Closed on Wednesdays).<br>
+  Plan your visit today and skip the long queues!
+</p>
+<a href="/Users/sanvidhanmane/Desktop/cprogramming/.vscode/webdev/ticket.html" class="btn">Buy a ticket</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section">
+    <div class="section-title">Gallery</div>
+    <div class="gallery">
+      <img src="https://i.postimg.cc/RZYVS4zw/white-tiger-2.jpg" >
+      <img src="https://i.postimg.cc/cJKCw6cD/sloth-bear.jpg" >
+      <img src="https://i.postimg.cc/fyMM2bxQ/Asia-Lion-2.jpg" >
+      <img src="https://i.postimg.cc/JnwFTRdX/jackle.jpg" >
+      <img src="https://i.postimg.cc/YSSn3B4D/Spoted-deer.jpg" >
+      <img src="https://i.postimg.cc/zXWVM7BR/monkey.jpg" >
+    </div>
+  </section>
+
+  <!-- Map Section -->
+<section id="map" class="section">
+  <div class="section-title">Find Us</div>
+  <div style="text-align: center;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17151.041341992997!2d73.86125623171019!3d18.446562998694695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eac307f7a82f%3A0x3ac431343224b00b!2sRajiv%20Gandhi%20Zoological%20Park%20%26%20Wildlife%20Research%20Center!5e0!3m2!1sen!2sin!4v1757945513260!5m2!1sen!2sin" 
+      width="100%" 
+      height="400" 
+      style="border:0;"
+      border-radius:10px;
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-content">
+      <div>
+        <h4>Contact Us</h4>
+        <p>Address: Rajiv Gandhi Zoological Park,Katraj,Pune</p>
+        <p>Email:  rajivgandhizoo@punecorporation.org</p>
+        <p>Phone: 020  2436771</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#about">About</a></p>
+        <p><a href="#gallery">Gallery</a></p>
+        <p><a href="#pricing">Pricing</a></p>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p><a href="#">Facebook</a></p>
+        <p><a href="#">Instagram</a></p>
+        <p><a href="#">Twitter</a></p>
+      </div>
+    </div>
+    <div class="bottom">
+       <p>© Rajiv Gandhi Zoological Park and Research Center. All rights reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>
